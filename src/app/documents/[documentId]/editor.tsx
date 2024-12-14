@@ -15,9 +15,10 @@ import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import Link from '@tiptap/extension-link';
 import TextAlign from '@tiptap/extension-text-align';
+import TextStyle from '@tiptap/extension-text-style';
 
 import { useEditorStore } from '@/store/use-editor-store';
-import TextStyle from '@tiptap/extension-text-style';
+import { FontSizeExtension } from '@/extensions/font-size';
 
 export const Editor = () => {
     const { setEditor } = useEditorStore();
@@ -55,15 +56,6 @@ export const Editor = () => {
         },
         extensions: [
             StarterKit,
-            Link.configure({
-                openOnClick: false,
-                autolink: true,
-                defaultProtocol: "https",
-            }),
-            TaskList,
-            TaskItem.configure({
-                nested: true,
-            }),
             Table,
             TableCell,
             TableHeader,
@@ -74,6 +66,16 @@ export const Editor = () => {
             FontFamily,
             TextStyle,
             Color,
+            FontSizeExtension,
+            TaskList,
+            Link.configure({
+                openOnClick: false,
+                autolink: true,
+                defaultProtocol: "https",
+            }),
+            TaskItem.configure({
+                nested: true,
+            }),
             Highlight.configure({
                 multicolor: true,
             }),
