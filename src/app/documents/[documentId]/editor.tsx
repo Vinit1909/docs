@@ -13,6 +13,7 @@ import Underline from '@tiptap/extension-underline'
 import FontFamily from '@tiptap/extension-font-family'
 import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
+import Link from '@tiptap/extension-link';
 
 import { useEditorStore } from '@/store/use-editor-store';
 import TextStyle from '@tiptap/extension-text-style';
@@ -53,6 +54,11 @@ export const Editor = () => {
         },
         extensions: [
             StarterKit,
+            Link.configure({
+                openOnClick: false,
+                autolink: true,
+                defaultProtocol: "https",
+            }),
             TaskList,
             TaskItem.configure({
                 nested: true,
@@ -96,4 +102,3 @@ export const Editor = () => {
         </div>
     );
 }
-
