@@ -617,14 +617,14 @@ export const Toolbar = () => {
                 {
                     label: "Comment",
                     icon: MessageSquarePlusIcon,
-                    onClick: () => console.log("TODO: Comment"),
-                    isActive: false, // TODO: Enable this functionality
+                    onClick: () => editor?.chain().focus().addPendingComment().run(),
+                    isActive: editor?.isActive("liveblocksComment")
                 },
                 {
                     label: "List Todo",
                     icon: ListTodoIcon,
                     onClick: () => editor?.chain().focus().toggleTaskList().run(),
-                    isActive: editor?.isActive("taskList"), // TODO: Enable this functionality
+                    isActive: editor?.isActive("taskList"),
                 },
                 {
                     label: "Remove Formatting",
