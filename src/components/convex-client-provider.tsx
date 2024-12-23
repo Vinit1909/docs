@@ -20,6 +20,9 @@ export function ConvexClientProvider({ children }: { children: ReactNode }) {
                 </Authenticated>
                 <Unauthenticated>
                     <div className="flex flex-col items-center justify-center min-h-screen">
+                        <div className="flex justify-center items-center mb-4">
+                            <img alt="logo" src="/logo.svg" className="mr-2 w-12 h-12" />
+                        </div>
                         <SignIn routing="hash" />
                     </div>
                 </Unauthenticated>
