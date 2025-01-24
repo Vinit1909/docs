@@ -26,7 +26,7 @@ A real-time, collaborative document editor built with **Next.js 15**, **Livebloc
 1. **Clone** the repository:
    ```
    git clone https://github.com/Vinit1909/docs-clone.git
-   cd docs-clone
+   cd docs
    ```
 2. **Install dependencies**:
    ```
